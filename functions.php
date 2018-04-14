@@ -10,6 +10,6 @@
  *
  * @return void
  */
-function new_fn(){
+function new_fn() {
 	esc_html_e( 'WP Standard Project', 'theme-domain' );
 }
