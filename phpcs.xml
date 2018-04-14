@@ -1,12 +1,12 @@
 <?xml version="1.0"?>
-<ruleset name="WordPress Theme Coding Standards">
-	<description>A custom set of code standard rules to check for WordPress themes.</description>
+<ruleset name="WordPress Coding Standards">
+	<description>A custom set of code standard rules to check for WordPress projects.</description>
 
 	<!-- Show colors in console -->
 	<arg value="-colors"/>
 
 	<!-- Show sniff codes in all reports -->
-	<arg value="s"/>
+	<arg value="plugin-name"/>
 
 	<!-- Ignore node_modules and vendor folder -->
 	<exclude-pattern>*/node_modules/*</exclude-pattern>
@@ -26,17 +26,6 @@
 		</properties>
 	</rule>
 
-	<!-- Allow for theme specific exceptions to the file name rules based
-		 on the theme hierarchy. -->
-	<rule ref="WordPress.Files.FileName">
-		<properties>
-			<property name="is_theme" value="true"/>
-		</properties>
-	</rule>
-
 	<rule ref="WordPress-Core"/>
-
-	<rule ref="WordPress-Extra"/>
-
 	<rule ref="WordPress-Docs"/>
 </ruleset>

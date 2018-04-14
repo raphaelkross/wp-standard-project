@@ -16,6 +16,9 @@ language: node_js
 node_js:
   - "8"
 
+env:
+  - WP_VERSION=latest WP_MULTISITE=0
+
 # Declare versions of PHP to use. Use one decimal max.
 # @link https://docs.travis-ci.com/user/build-configuration/
 matrix:
@@ -24,15 +27,19 @@ matrix:
     include:
         # aliased to a recent 5.6.x version
         - php: '5.4'
+          env: WP_VERSION=latest WP_MULTISITE=1
         # aliased to a recent 5.6.x version
         - php: '5.6'
-          env: SNIFF=1
+          env: SNIFF=1 WP_VERSION=latest WP_MULTISITE=1
         # aliased to a recent 7.0.x version
         - php: '7.0'
+          env: WP_VERSION=latest WP_MULTISITE=1
         # aliased to a recent 7.2.x version
         - php: '7.2'
+          env: WP_VERSION=latest WP_MULTISITE=1
         # bleeding edge PHP
         - php: 'nightly'
+          env: WP_VERSION=latest WP_MULTISITE=1
 
     allow_failures:
         - php: 'nightly'
@@ -63,6 +70,14 @@ before_script:
     - if [[ "$SNIFF" == "1" ]]; then $PHPCS_DIR/bin/phpcs --config-set installed_paths $WPCS_DIR,$PHPCOMPAT_DIR; fi
     # After CodeSniffer install you should refresh your path.
     - if [[ "$SNIFF" == "1" ]]; then phpenv rehash; fi
+    - bash bin/install-wp-tests.sh wordpress_test root '' localhost $WP_VERSION
+    - export PATH="$HOME/.composer/vendor/bin:$PATH"
+    - |
+        if [[ ${TRAVIS_PHP_VERSION:0:2} == "7." ]]; then
+        composer global require "phpunit/phpunit=5.7.*"
+        else
+        composer global require "phpunit/phpunit=4.8.*"
+        fi
 # Run test script commands.
 # Default is specific to project language.
 # All commands must exit with code 0 on success. Anything else is considered failure.
@@ -77,7 +92,7 @@ script:
     # Uses a custom ruleset based on WordPress. This ruleset is automatically
     # picked up by PHPCS as it's named `phpcs.xml(.dist)`.
     - if [[ "$SNIFF" == "1" ]]; then $PHPCS_DIR/bin/phpcs . --runtime-set ignore_warnings_on_exit 1; fi
-
+    - phpunit
 # Receive notifications for build results.
 # @link https://docs.travis-ci.com/user/notifications/#Email-notifications
 notifications:
