@@ -12,6 +12,9 @@
 	<exclude-pattern>*/node_modules/*</exclude-pattern>
 	<exclude-pattern>*/vendor/*</exclude-pattern>
 
+	<!-- Check all files in this directory and the directories below it. -->
+	<file>.</file>
+
 	<rule ref="WordPress"/>
 
 	<!-- Verify that the text_domain is set to the desired text-domain.
