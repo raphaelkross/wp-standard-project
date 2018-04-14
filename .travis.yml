@@ -14,6 +14,10 @@ dist: trusty
 # @link https://about.travis-ci.org/docs/user/languages/php/
 language: php
 
+language: node_js
+node_js:
+  - "8"
+
 # Declare versions of PHP to use. Use one decimal max.
 # @link https://docs.travis-ci.com/user/build-configuration/
 matrix:
@@ -33,9 +37,6 @@ matrix:
         - php: '7.2'
         # bleeding edge PHP
         - php: 'nightly'
-        # add node support
-        - language: node_js
-          node_js: 8
 
     allow_failures:
         - php: 'nightly'
@@ -73,7 +74,7 @@ script:
     # Search for PHP syntax errors.
     - find -L . -name '*.php' -print0 | xargs -0 -n 1 -P 4 php -l
     # Run the theme through ESLint.
-    # - if [[ "$SNIFF" == "1" ]]; then ./node_modules/.bin/eslint assets --ext js; fi
+    - if [[ "$SNIFF" == "1" ]]; then ./node_modules/.bin/eslint assets --ext js; fi
     # WordPress Coding Standards.
     # @link https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards
     # @link https://pear.php.net/package/PHP_CodeSniffer/
