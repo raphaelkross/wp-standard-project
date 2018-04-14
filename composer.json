@@ -1,8 +1,8 @@
 {
 	"name": "rafaelangeline/wp-standard-project",
-	"type": "wordpress-theme",
+	"type": "wordpress-plugin",
 	"license": "EULA",
-	"description": "WordPress theme with standard configuration.",
+	"description": "WordPress plugin with standard configuration.",
 	"homepage": "https://github.com/raphaelkross/wp-standard-project",
 	"authors": [
 		{
