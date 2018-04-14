@@ -1,10 +1,10 @@
-## JS Standard Project
+## WP Standard Project
 
-This is a sample project filled with configuration files that will guarantee a much higher quality to any JS based project.
+This is a sample project filled with configuration files that will guarantee a much higher quality to any WP based project.
 
 #### Installation
 
-Run `npm install` to install all dependencies.
+Run `npm install` and `composer install` to install all dependencies.
 
 The file `package.json` contains all dependencies, special attention to `devDependencies` and `scripts` section.
 
@@ -32,17 +32,10 @@ Reference: https://eslint.org/
 
 Recommended: install and configure an extension in your favorite editor.
 
-#### Tests / Jest + Enzyme
+#### Tests / PHPUnit
 
-Jest and Enzyme is used to test components, functions and Enzyme can render components to test what's being rendered.
-
-Run with `npm test`.
-
-`jest.config.js` and `jest.setup.js`
-
-Reference: https://facebook.github.io/jest/
-
-Reference: https://github.com/airbnb/enzyme
+@TODO: install phpunit and test structure.
+@TODO: run tests at TravisCI as well.
 
 #### Continuous Integration / TravisCI
 

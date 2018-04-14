@@ -4,15 +4,13 @@
 	"description": "Sample configuration to WP based projects.",
 	"main": "index.js",
 	"scripts": {
-		"test": "NODE_ENV=test jest"
+		"test": "eslint assets --ext js"
 	},
 	"repository": {
 		"type": "git",
 		"url": "git+https://github.com/raphaelkross/wp-standard-project.git"
 	},
-	"keywords": [
-		"wp"
-	],
+	"keywords": ["wp"],
 	"author": "Rafael Angeline",
 	"license": "ISC",
 	"bugs": {
