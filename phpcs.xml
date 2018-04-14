@@ -11,6 +11,7 @@
 	<!-- Ignore node_modules and vendor folder -->
 	<exclude-pattern>*/node_modules/*</exclude-pattern>
 	<exclude-pattern>*/vendor/*</exclude-pattern>
+	<exclude-pattern>*/assets/*</exclude-pattern>
 
 	<!-- Check all files in this directory and the directories below it. -->
 	<file>.</file>
@@ -21,7 +22,7 @@
 		 Multiple valid text domains can be provided as a comma-delimited list. -->
 	<rule ref="WordPress.WP.I18n">
 		<properties>
-			<property name="text_domain" type="array" value="theme-domain"/>
+			<property name="text_domain" type="string" value="theme-domain"/>
 		</properties>
 	</rule>
 
