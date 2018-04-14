@@ -8,6 +8,10 @@
 	<!-- Show sniff codes in all reports -->
 	<arg value="s"/>
 
+	<!-- Ignore node_modules and vendor folder -->
+	<exclude-pattern>*/node_modules/*</exclude-pattern>
+	<exclude-pattern>*/vendor/*</exclude-pattern>
+
 	<rule ref="WordPress"/>
 
 	<!-- Verify that the text_domain is set to the desired text-domain.
