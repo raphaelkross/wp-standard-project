@@ -33,6 +33,9 @@ matrix:
         - php: '7.2'
         # bleeding edge PHP
         - php: 'nightly'
+        # add node support
+        - language: node_js
+          node_js: 8
 
     allow_failures:
         - php: 'nightly'
