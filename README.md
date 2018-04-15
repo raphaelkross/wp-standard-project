@@ -38,6 +38,8 @@ Recommended: install and configure an extension in your favorite editor.
 
 The structure was created by WP Cli's command `wp scaffold plugin-tests`.
 
+Reference: https://phpunit.de/
+
 #### Continuous Integration / TravisCI
 
 TravisCI is used to trigger tests against the code to ensure code that makes tests fail aren't merged.
