@@ -34,8 +34,9 @@ Recommended: install and configure an extension in your favorite editor.
 
 #### Tests / PHPUnit
 
-@TODO: install phpunit and test structure.
-@TODO: run tests at TravisCI as well.
+`phpunit.xml.dist` and `/tests` configures PHPUnit to unit tests.
+
+The structure was created by WP Cli's command `wp scaffold plugin-tests`.
 
 #### Continuous Integration / TravisCI
 
