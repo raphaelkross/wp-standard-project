@@ -6,7 +6,7 @@
 	<arg value="-colors"/>
 
 	<!-- Show sniff codes in all reports -->
-	<arg value="plugin-name"/>
+	<arg value="s"/>
 
 	<!-- Ignore node_modules and vendor folder -->
 	<exclude-pattern>*/node_modules/*</exclude-pattern>
