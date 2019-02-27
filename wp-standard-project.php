@@ -12,7 +12,7 @@
  * Plugin URI:  https://example.com/plugin-name
  * Description: Description of the plugin.
  * Version:     1.0.0
- * Author:      Your Name
+ * Author:      Rafael Angeline
  * Author URI:  https://example.com
  * Text Domain: plugin-name
  * License:     GPL-2.0+
